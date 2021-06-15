@@ -7,6 +7,7 @@
 <script>
 import Footer from '@/components/Footer'
 import {mapState} from 'vuex'
+
 export default {
   components:{
     Footer
