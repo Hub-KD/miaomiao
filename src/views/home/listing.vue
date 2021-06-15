@@ -57,7 +57,7 @@ export default {
       text: "加载中...",
       spinnerType: "fading-circle",
     });
-    this.axios.get("/ajax/movieOnInfoList").then((res) => {
+    this.axios.get("https://m.maoyan.com/ajax/movieOnInfoList").then((res) => {
       this.datalist = res.data.movieList;
       // this.$nextTick(() => {
       //   var scroll = new BScroll(this.$refs.list_body, {
@@ -92,7 +92,7 @@ export default {
     },
     handleTouch(pos) {
       if (pos.y > 30) {
-        this.axios.get("/ajax/movieOnInfoList?ci=11").then((res) => {
+        this.axios.get("https://m.maoyan.com/ajax/movieOnInfoList?ci=11").then((res) => {
           this.pulldownmsg = "更新完成";
           setTimeout(() => {
             this.datalist = res.data.movieList;
@@ -107,8 +107,8 @@ export default {
     },
     loadMore() {
       this.loading = true;
-      console.log('1')
-     this.axios.get("/ajax/movieOnInfoList").then((res) => {
+      // console.log('1')
+     this.axios.get("https://m.maoyan.com/ajax/movieOnInfoList").then((res) => {
       this.datalist = [...this.datalist,...res.data.movieList];
        this.loading = false;
     });
