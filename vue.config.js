@@ -1,3 +1,4 @@
+const ENV = process.env.NODE_ENV;
 module.exports = {
     devServer: {
         proxy: {
@@ -12,5 +13,6 @@ module.exports = {
                 changeOrigin: true
             }
         }
-    }
+    },
+    publicPath: ENV === "development" ? "" : "/miaomiao/"
 }
